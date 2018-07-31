@@ -1071,7 +1071,8 @@ html, #root {
 body {
   height: 100%;
   font-size: 14px;
-  background-color: #fafafa; }
+  background-color: #fafafa;
+  overflow: hidden; }
 
 h1, .h1 {
   font-size: 28px;

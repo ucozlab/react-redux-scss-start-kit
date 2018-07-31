@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import APP from "../../lib/app";
 import { connect } from "react-redux";
 
 class MainPage extends Component {
@@ -11,6 +12,25 @@ class MainPage extends Component {
   }
 
   componentDidMount() {
+
+    const THREE = window.THREE;
+
+    const loader = new THREE.FileLoader();
+    loader.load( '/app.json', function ( text ) {
+
+      const player = new APP.Player();
+      player.load( JSON.parse( text ) );
+      player.setSize( window.innerWidth, window.innerHeight );
+      player.play();
+
+      document.getElementById('3d').appendChild( player.dom );
+
+      window.addEventListener( 'resize', function () {
+        player.setSize( window.innerWidth, window.innerHeight );
+      });
+
+    });
+
   }
 
   componentWillUnmount() {
@@ -18,9 +38,7 @@ class MainPage extends Component {
 
   render() {
     return (
-      <div className="mainpage">
-
-      </div>
+      <div id="3d"></div>
     );
   }
 }

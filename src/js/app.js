@@ -2,8 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 
-import Header from './components/header';
-import Footer from './components/footer';
+// import Header from './components/header';
+// import Footer from './components/footer';
 
 class App extends Component {
 
@@ -14,11 +14,11 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Header/>
-        <main id="main">
+        {/*<Header/>*/}
+        <main>
           {this.props.children}
         </main>
-        <Footer/>
+        {/*<Footer/>*/}
       </Fragment>
     )
   }
