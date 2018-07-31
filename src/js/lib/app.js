@@ -10,7 +10,7 @@ export default {
   Player: function () {
 
     var loader = new THREE.ObjectLoader();
-    var camera, scene, renderer;
+    var camera, scene, renderer, controls;
 
     var events = {};
 
@@ -114,6 +114,8 @@ export default {
       camera.aspect = this.width / this.height;
       camera.updateProjectionMatrix();
 
+      controls = new THREE.OrbitControls( camera );
+
       if ( renderer.vr.enabled ) {
 
         dom.appendChild( WEBVR.createButton( renderer ) );
@@ -174,7 +176,7 @@ export default {
 
       }
 
-      // controls.update();
+      controls.update();
 
       renderer.render( scene, camera );
 

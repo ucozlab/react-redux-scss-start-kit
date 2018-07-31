@@ -31,15 +31,6 @@ class MainPage extends Component {
 
     });
 
-    // // camera
-    // camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 100 );
-    // camera.position.set( 20, 20, 20 );
-    //
-    // // controls
-    // controls = new THREE.OrbitControls( camera );
-    // controls.minDistance = 10;
-    // controls.maxDistance = 50;
-
   }
 
   componentWillUnmount() {
