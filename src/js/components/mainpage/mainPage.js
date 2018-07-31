@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import APP from "../../lib/app";
+import APP from "../../lib/threejs-app";
 import { connect } from "react-redux";
 
 class MainPage extends Component {
@@ -38,7 +38,7 @@ class MainPage extends Component {
 
   render() {
     return (
-      <div id="3d"></div>
+      <div id="3d"/>
     );
   }
 }
