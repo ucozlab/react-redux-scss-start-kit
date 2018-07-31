@@ -1,0 +1,46 @@
+html, #root {
+  height: 100%;
+}
+body {
+  @extend .regular;
+  height: 100%;
+  font-size: 14px;
+  background-color: $bg;
+}
+
+h1, .h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+h2, .h2 {
+  @extend .bold;
+  font-size: 16px;
+  color: $main;
+  padding: 0 0 15px 0;
+}
+
+h3, .h3 {
+  @extend .bold;
+  font-size: 20px;
+  color: $light3;
+  text-transform: uppercase;
+  padding: 15px 0 20px 0;
+}
+
+
+h3, .h4 {
+  @extend .bold;
+  color: $light3;
+  text-transform: none;
+  padding: 0 0 20px 0;
+  font-size: 16px;
+}
+
+input {
+  @extend .regular;
+}
+
+#main {
+  min-height: calc(100% - 120px);
+}

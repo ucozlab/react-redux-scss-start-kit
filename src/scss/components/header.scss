@@ -1,0 +1,8 @@
+.header {
+  @extend .table;
+  height: 60px;
+  padding-top: 10px;
+  background-color: $white;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+}

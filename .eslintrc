@@ -1,0 +1,20 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "es6": true,        // We are writing ES6 code
+    "browser": true,    // for the browser
+    "commonjs": true    // and use require() for stylesheets
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "max-len": [1, 120, 2,
+      {
+      "ignoreComments": true
+      }
+    ],
+    "no-console": "off"
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"]
+}
