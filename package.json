@@ -39,7 +39,6 @@
     "gulp-livereload": "^3.8.1",
     "gulp-nunjucks-render": "^2.2.1",
     "gulp-react": "^3.1.0",
-    "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^2.4.1",
     "gulp-uglify": "^3.0.0",
     "gulp-uglifyjs": "^0.6.2",
@@ -66,6 +65,7 @@
   },
   "dependencies": {
     "gulp-nunjucks": "^3.0.0",
+    "gulp-sass": "^4.0.1",
     "nunjucks": "^3.1.3"
   }
 }

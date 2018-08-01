@@ -36,7 +36,16 @@ export default {
 
       dom.appendChild( renderer.domElement );
 
-      this.setScene( loader.parse( json.scene ) );
+      const parsedScene = loader.parse( json.scene );
+
+      // console.log('parsedScene', parsedScene);
+        parsedScene.traverse(( child ) => {
+          if ( child instanceof THREE.Mesh && child.name === "Icosphere") {
+            this.replaceChild(child);
+          }
+        });
+
+      this.setScene( parsedScene );
       this.setCamera( loader.parse( json.camera ) );
       this.setControls();
 
@@ -137,6 +146,40 @@ export default {
     this.setScene = function ( value ) {
 
       scene = value;
+
+    };
+
+    this.replaceChild = function (child) {
+
+      console.log('child', child);
+
+      var path = "/img/Park2/";
+      var format = '.jpg';
+      var urls = [
+        path + 'posx' + format, path + 'negx' + format,
+        path + 'posy' + format, path + 'negy' + format,
+        path + 'posz' + format, path + 'negz' + format
+      ];
+
+      var textureCube = new THREE.CubeTextureLoader().load( urls );
+      textureCube.format = THREE.RGBFormat;
+
+      //
+
+      // var geometry = new THREE.SphereBufferGeometry( 100, 32, 16 );
+
+      var shader = THREE.FresnelShader;
+      var uniforms = THREE.UniformsUtils.clone( shader.uniforms );
+
+      uniforms[ "tCube" ].value = textureCube;
+
+      var material = new THREE.ShaderMaterial( {
+        uniforms: uniforms,
+        vertexShader: shader.vertexShader,
+        fragmentShader: shader.fragmentShader
+      });
+
+      child.material = material;
 
     };
 

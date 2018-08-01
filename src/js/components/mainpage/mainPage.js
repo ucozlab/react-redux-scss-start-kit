@@ -18,6 +18,8 @@ class MainPage extends Component {
     const loader = new THREE.FileLoader();
     loader.load( '/app.json', function ( text ) {
 
+      // console.log(text);
+
       const player = new APP.Player();
       player.load( JSON.parse( text ) );
       player.setSize( window.innerWidth, window.innerHeight );
