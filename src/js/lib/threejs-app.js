@@ -40,8 +40,15 @@ export default {
 
       // console.log('parsedScene', parsedScene);
         parsedScene.traverse(( child ) => {
-          if ( child instanceof THREE.Mesh && child.name === "Icosphere") {
-            this.replaceChild(child);
+          // if ( child instanceof THREE.Mesh && child.name === "Icosphere") {
+          //   this.replaceChild(child);
+          // }
+          // console.log(child);
+          if (child.type === "SpotLight") {
+            console.log(child);
+            child.target.position.set(child.position.x, 0, child.position.z);
+            child.target.updateMatrixWorld();
+
           }
         });
 
