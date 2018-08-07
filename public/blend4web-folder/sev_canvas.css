@@ -1,0 +1,27 @@
+body {
+  background-color: #000;
+  margin: 0;
+  overflow: hidden;
+}
+
+.wrapper {
+  height: 300px;
+  width: 500px;
+  position: relative;
+  margin: 0 auto;
+}
+
+#main_canvas_container_1,
+#main_canvas_container_2 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  color: #fff;
+  margin: 20px auto;
+  width: 500px;
+}

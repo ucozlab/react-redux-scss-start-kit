@@ -5,6 +5,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import history from './history';
 import App from './app';
 import MainPage from './components/mainpage/mainPage';
+import BlendComponent from './components/blendComponent';
 
 
 // using react router 4 --> https://github.com/reactjs/redux/blob/master/docs/advanced/UsageWithReactRouter.md
@@ -15,7 +16,7 @@ const Root = ({ store }) => (
       <Switch>
         <App>
           <Route path='/' exact component={MainPage}/>
-          <Route path='/news' component={MainPage}/>
+          <Route path='/blend4web' component={BlendComponent}/>
         </App>
       </Switch>
     </Router>

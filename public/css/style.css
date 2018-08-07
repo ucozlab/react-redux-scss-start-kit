@@ -149,7 +149,7 @@ button {
     flex: 0 0 40px;
     text-align: center; }
 
-.table, .header, .footer {
+.table, .footer {
   display: table;
   width: 100%;
   table-layout: fixed; }
@@ -3411,11 +3411,13 @@ h3, .h4 {
   clip: auto; }
 
 .header {
-  height: 60px;
-  padding-top: 10px;
-  background-color: #ffffff;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
-  text-align: center; }
+  position: fixed;
+  top: 0;
+  height: 50px;
+  left: 0;
+  z-index: 1; }
+  .header-button {
+    padding: 5px 10px; }
 
 .footer {
   width: 100%;

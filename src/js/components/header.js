@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
 
@@ -12,7 +12,8 @@ class Header extends Component {
   render() {
     return (
       <header className="header">
-        <h1>3d design</h1>
+        <Link className="header-button" to={"/"}>three.js</Link>
+        <Link className="header-button" to={"/blend4web"}>blend4web</Link>
       </header>
     );
   }

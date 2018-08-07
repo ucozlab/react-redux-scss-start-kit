@@ -43,13 +43,12 @@ export default {
           // if ( child instanceof THREE.Mesh && child.name === "Icosphere") {
           //   this.replaceChild(child);
           // }
-          // console.log(child);
+          // console.log('child', child);
           if (child.type === "SpotLight") {
-            console.log(child);
             child.target.position.set(child.position.x, 0, child.position.z);
             child.target.updateMatrixWorld();
-
           }
+
         });
 
       this.setScene( parsedScene );
@@ -129,6 +128,8 @@ export default {
 
       camera = value;
       camera.aspect = this.width / this.height;
+      camera.near = 0.1;
+      camera.far = 10000;
       camera.updateProjectionMatrix();
 
       if ( renderer.vr.enabled ) {
@@ -279,6 +280,7 @@ export default {
       renderer.setAnimationLoop( null );
 
     };
+
 
     this.dispose = function () {
 
